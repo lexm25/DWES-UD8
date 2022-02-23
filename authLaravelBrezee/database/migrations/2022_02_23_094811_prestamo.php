@@ -17,8 +17,7 @@ class Prestamo extends Migration
             $table->string('ISBN',13);
             $table->date('fechaInicio');
             $table->date('fechaFin');
-            $table->timestamps('updated_at');
-            $table->timestamps('created_at');
+            $table->timestamps('');
         });
     }
 

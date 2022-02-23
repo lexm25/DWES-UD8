@@ -19,8 +19,7 @@ class Libro extends Migration
             $table->string('idioma');
             $table->date('publicacion');
             $table->integer('editorial');
-            $table->timestamps('updated_at');
-            $table->timestamps('created_at');
+            $table->timestamps('');
         });
     }
 

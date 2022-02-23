@@ -16,8 +16,7 @@ class Editorial extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('nacionalidad');
-            $table->timestamps('updated_at');
-            $table->timestamps('created_at');
+            $table->timestamps('');
         });
     }
 
