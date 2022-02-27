@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Prestamo extends Model
 {
     use HasFactory;
-    protected $table = "Prestamo";
+    protected $table = 'Prestamo';
+    protected $fillable = ['id', 'ISBN', 'fechaInicio', 'fechaFin'];
+    
 }
