@@ -1,3 +1,6 @@
+@extends('layouts.master')
+@section('title','Editoriales')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,3 +44,4 @@
     </table>
 </body>
 </html>
+@endsection

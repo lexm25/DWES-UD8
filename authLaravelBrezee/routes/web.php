@@ -43,4 +43,10 @@ Route::get('/editoriales/crearEditorial', [EditorialController::class, 'create']
 
 Route::post('/editoriales/crearEditorial',  [EditorialController::class, 'store']);
 
+Route::get('/home',function(){ return view('layouts.index'); });
+
+Route::get('/about',function(){ return view('layouts.about'); });
+
+Route::get('/contact',function(){ return view('layouts.contact'); });
+
 require __DIR__.'/auth.php';

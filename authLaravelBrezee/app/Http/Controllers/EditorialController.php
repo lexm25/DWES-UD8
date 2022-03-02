@@ -50,7 +50,7 @@ class EditorialController extends Controller{
      */
     public function show($id){
         $editorial = $this->editoriales->obtenerEditorialPorId($id);
-        return view('editoriales.editorial_view', ['editorial' => $editorial]);
+        return view('editoriales.editorial_view', ['editoriales' => $editorial]);
     }
 
     /**
@@ -61,7 +61,7 @@ class EditorialController extends Controller{
      */
     public function edit($id){
         $editorial = $this->editoriales->obtenerEditorialPorId($id);
-        return view('editoriales.editarEditorial_view', ['editorial' => $editorial]);
+        return view('editoriales.editarEditorial_view', ['editoriales' => $editorial]);
     }
 
     /**
