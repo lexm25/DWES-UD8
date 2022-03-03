@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/home">HOME</a>
+          <a class="navbar-brand" href="/home"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" width="50px"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -25,6 +25,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="/editoriales/crearEditorial">Nueva Editorial</a>
+              </li>
+              <li>
+                <a class="nav-link position-absolute end-0" href="/login" style="padding-right: 2em">Login</a>
               </li>
             </ul>
           </div>
