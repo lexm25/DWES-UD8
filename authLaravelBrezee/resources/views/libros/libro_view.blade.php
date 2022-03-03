@@ -9,17 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libro</title>
     <style>
-        table, td, th {
-        border: 1px solid black;
+        #separador{
+            margin: 50px;
         }
-        table {
-        border-collapse: collapse;
-        width: 50%;
+        #tabla{
+            margin: auto;
+        }
+        #h1{
+            text-align: center
         }
     </style>
 </head>
 <body>
-    <table style="border: 1px solid black;">
+    <div id="separador"></div>
+    <h1 id="h1">LISTA DE LIBROS</h1>
+    <div class="container">
+    <table class="table table-sm" id="tabla">
         <tr>
             <th>ISBN</th>
             <th>TÍTULO</th>
