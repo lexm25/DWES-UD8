@@ -10,7 +10,7 @@
       footer {
         color: white;
         width: 100%;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 0;
         top: -1;
@@ -37,6 +37,12 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="/editoriales/crearEditorial">Nueva Editorial</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/formularioMail">Sugerencias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/peticiones">Peticiones</a>
               </li>
               <li>
                 <a class="nav-link position-absolute end-0" href="/login" style="padding-right: 2em">Login</a>

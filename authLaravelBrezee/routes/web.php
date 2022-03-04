@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LibroController;
 use App\Http\Controllers\EditorialController;
+use App\Http\Controllers\PeticionesController;
 //use App\Http\Controllers\PrestamoController; 
 /*
 |--------------------------------------------------------------------------
@@ -48,5 +49,15 @@ Route::get('/home',function(){ return view('layouts.index'); });
 Route::get('/about',function(){ return view('layouts.about'); });
 
 Route::get('/contact',function(){ return view('layouts.contact'); });
+
+Route::get('/formularioMail', [PeticionesController::class, 'create']);
+
+Route::post('/formularioMail',  [PeticionesController::class, 'store']);
+
+Route::get('/peticiones', [PeticionesController::class, 'index']);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth']);
 
 require __DIR__.'/auth.php';
