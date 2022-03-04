@@ -39,7 +39,7 @@
                 echo "<td>" . $editorial["nombre"] . "</td>";
                 echo "<td>" . $editorial["nacionalidad"] . "</td>";
                 //echo "<td><a href='/libro/" . $editorial["ISBN"] . "'>VIEW</a>";
-               //echo "<td><a href='/libros/editar/" . $editorial["ISBN"] . "'>EDIT</a>";
+                //echo "<td><a href='/libros/editar/" . $editorial["ISBN"] . "'>EDIT</a>";
                 echo "</tr>";
             }
         ?>

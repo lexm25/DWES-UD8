@@ -41,6 +41,8 @@
                 echo "<td>" . $peticion["nombreApe"] . "</td>";
                 echo "<td>" . $peticion["email"] . "</td>";
                 echo "<td>" . $peticion["titulo"] . "</td>";
+                //echo "<td><a href='/libro/" . $editorial["ISBN"] . "'>VIEW</a>";
+                //echo "<td><a href='/libros/editar/" . $editorial["ISBN"] . "'>EDIT</a>";
                 echo "</tr>";
             }
         ?>

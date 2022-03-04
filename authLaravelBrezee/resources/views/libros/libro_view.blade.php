@@ -44,6 +44,10 @@
                 echo "</tr>";
         ?>
     </table>
+    <div id="separador"></div>
+    <div style="text-align: center">
+        <a class="btn btn-secondary" href="/libro/crearPDF/<?php echo $libro["ISBN"] ?>">GUARDAR EN PDF</a>
+    </div>
 </body>
 </html>
 @endsection

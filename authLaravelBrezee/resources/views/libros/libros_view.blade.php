@@ -40,23 +40,29 @@
             <th></th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
-        <?php
-            foreach ($libros as $libro) {
-                echo "<tr>";
-                echo "<td>" . $libro["ISBN"] . "</td>";
-                echo "<td>" . $libro["titulo"] . "</td>";
-                echo "<td>" . $libro["autor"] . "</td>";
-                echo "<td>" . $libro["idioma"] . "</td>";
-                echo "<td>" . $libro["publicacion"] . "</td>";
-                echo "<td>" . $libro["editorial"] . "</td>";
-                echo "<td><a class='btn btn-secondary' href='/libro/" . $libro["ISBN"] . "'>VIEW</a>";
-                echo "<td><a class='btn btn-secondary' href='/libros/editar/" . $libro["ISBN"] . "'>EDIT</a>";
-                echo "<td><a class='btn btn-secondary' href='/libros/borrar/" . $libro["ISBN"] . "'>DELETE</a>";
-                echo "</tr>";
-            }
-        ?>
+            @foreach ($libros as $libro) 
+        <tr>
+            <td>{{ $libro->ISBN }}</td>
+            <td>{{ $libro->titulo }}</td>
+            <td>{{ $libro->autor }}</td>
+            <td>{{ $libro->idioma }}</td>
+            <td>{{ $libro->publicacion }}</td>
+            <td>{{ $libro->editorial }}</td>
+            
+            <td><a class="btn btn-secondary" href="/libro/{{$libro->ISBN}}">Ver</a></td>
+            @auth
+            <td><a class="btn btn-secondary" href="/libros/editar/{{$libro->ISBN}}">Editar</a></td>
+            <td><a class="btn btn-secondary" href="/libros/editar/{{$libro->ISBN}}">Eliminar</a></td>
+            @endauth
+        </tr>
+        @endforeach
     </table>
+    <div id="separador"></div>
+    <div style="text-align: center">
+        <a class="btn btn-secondary" href="/libros/crearPDF">GUARDAR EN PDF</a>
+    </div>
     </div>
 </body>
 </html>

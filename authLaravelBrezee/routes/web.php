@@ -5,6 +5,7 @@ use App\Http\Controllers\LibroController;
 use App\Http\Controllers\EditorialController;
 use App\Http\Controllers\PeticionesController;
 //use App\Http\Controllers\PrestamoController; 
+use App\Http\Controllers\PDFController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,32 +33,28 @@ Route::get('/libros/editar/{isbn}', [LibroController::class, 'edit']);
 
 Route::put('/libros/editar/{isbn}',  [LibroController::class, 'update']);
 
-Route::get('/libros/crearLibro', [LibroController::class, 'create']);
+Route::get('/libros/crearLibro', [LibroController::class, 'create'])->middleware('auth');
 
-Route::post('/libros/crearLibro',  [LibroController::class, 'store']);
+Route::post('/libros/crearLibro',  [LibroController::class, 'store'])->middleware('auth');
 
 //Route::get('/libros/borrar/{isbn}', [LibroController::class, 'destroy']);
 
-Route::get('/editoriales', [EditorialController::class, 'index']);
+Route::get('/editoriales', [EditorialController::class, 'index'])->middleware('auth');
 
-Route::get('/editoriales/crearEditorial', [EditorialController::class, 'create']);
+Route::get('/editoriales/crearEditorial', [EditorialController::class, 'create'])->middleware('auth');
 
-Route::post('/editoriales/crearEditorial',  [EditorialController::class, 'store']);
+Route::post('/editoriales/crearEditorial',  [EditorialController::class, 'store'])->middleware('auth');
 
 Route::get('/home',function(){ return view('layouts.index'); });
-
-Route::get('/about',function(){ return view('layouts.about'); });
-
-Route::get('/contact',function(){ return view('layouts.contact'); });
 
 Route::get('/formularioMail', [PeticionesController::class, 'create']);
 
 Route::post('/formularioMail',  [PeticionesController::class, 'store']);
 
-Route::get('/peticiones', [PeticionesController::class, 'index']);
+Route::get('/peticiones', [PeticionesController::class, 'index'])->middleware('auth');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth']);
+Route::get('/libros/crearPDF', [PDFController::class, 'guardarTodosPDF']);
+
+Route::get('/libro/crearPDF/{isbn}', [PDFController::class, 'guardarUnoPDF']);
 
 require __DIR__.'/auth.php';

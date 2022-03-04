@@ -7,7 +7,6 @@ use App\Models\Peticiones;
 use App\Mail\NotifyMail;
 use Illuminate\Support\Facades\Mail;
 
-
 class PeticionesController extends Controller{
     protected $peticiones;
     public function __construct(Peticiones $peticiones){

@@ -29,6 +29,7 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/libros">Libros</a>
               </li>
+              @auth
               <li class="nav-item">
                 <a class="nav-link active" href="/libros/crearLibro">Nuevo Libro</a>
               </li>
@@ -38,15 +39,20 @@
               <li class="nav-item">
                 <a class="nav-link active" href="/editoriales/crearEditorial">Nueva Editorial</a>
               </li>
+              @endauth
               <li class="nav-item">
                 <a class="nav-link active" href="/formularioMail">Sugerencias</a>
               </li>
+              @auth
               <li class="nav-item">
                 <a class="nav-link active" href="/peticiones">Peticiones</a>
               </li>
+              @endauth
+              @guest
               <li>
                 <a class="nav-link position-absolute end-0" href="/login" style="padding-right: 2em">Login</a>
               </li>
+              @endguest
             </ul>
           </div>
         </div>
