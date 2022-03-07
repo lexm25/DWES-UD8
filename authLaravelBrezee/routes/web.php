@@ -37,7 +37,7 @@ Route::get('/libros/crearLibro', [LibroController::class, 'create'])->middleware
 
 Route::post('/libros/crearLibro',  [LibroController::class, 'store'])->middleware('auth');
 
-//Route::get('/libros/borrar/{isbn}', [LibroController::class, 'destroy']);
+Route::get('/libros/borrar/{isbn}', [LibroController::class, 'destroy'])->middleware('auth');
 
 Route::get('/editoriales', [EditorialController::class, 'index'])->middleware('auth');
 

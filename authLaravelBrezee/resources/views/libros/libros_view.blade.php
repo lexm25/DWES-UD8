@@ -54,7 +54,7 @@
             <td><a class="btn btn-secondary" href="/libro/{{$libro->ISBN}}">Ver</a></td>
             @auth
             <td><a class="btn btn-secondary" href="/libros/editar/{{$libro->ISBN}}">Editar</a></td>
-            <td><a class="btn btn-secondary" href="/libros/editar/{{$libro->ISBN}}">Eliminar</a></td>
+            <td><a class="btn btn-secondary" href="/libros/borrar/{{$libro->ISBN}}">Eliminar</a></td>
             @endauth
         </tr>
         @endforeach
