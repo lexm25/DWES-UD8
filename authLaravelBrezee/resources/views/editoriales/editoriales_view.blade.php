@@ -32,6 +32,8 @@
             <th>NOMBRE</th>
             <th>NACIONALIDAD</th>
         </tr>
+            @foreach ($libros as $libro) 
+        <tr>
         <?php
             foreach ($editoriales as $editorial) {
                 echo "<tr>";

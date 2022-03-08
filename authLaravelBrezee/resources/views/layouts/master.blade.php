@@ -47,7 +47,13 @@
               <li class="nav-item">
                 <a class="nav-link active" href="/peticiones">Peticiones</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/peliculas/crearPelicula">Petición Películas</a>
+              </li>
               @endauth
+              <li class="nav-item">
+                <a class="nav-link active" href="/peliculas">Películas</a>
+              </li>
               @guest
               <li>
                 <a class="nav-link position-absolute end-0" href="/login" style="padding-right: 2em">Login</a>

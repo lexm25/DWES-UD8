@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Crear Libros')
+@section('title','Crear Libro')
 @section('content')
 <div style="margin-top: 50px"></div>
     <h1 style="text-align: center">NUEVO LIBRO</h1>

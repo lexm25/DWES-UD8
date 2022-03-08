@@ -3,23 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Peticiones;
-use App\Mail\NotifyMail;
-use Illuminate\Support\Facades\Mail;
+use App\Models\Peliculas;
 
-class PeticionesController extends Controller{
-    protected $peticiones;
-    public function __construct(Peticiones $peticiones){
-        $this->peticiones = $peticiones;
+class PeliculaController extends Controller
+{
+    protected $peliculas;
+    public function __construct(Peliculas $peliculas){
+        $this->peliculas = $peliculas;
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        $peticiones = $this->peticiones->obtenerPeticiones();
-        return view('emails.peticiones_view', ['peticiones' => $peticiones]);
+    public function index()
+    {
+        $peliculas = $this->peliculas->obtenerPeliculas();
+        //el primer parámetro es la ruta y el punto es como una /
+        return view('peliculas.peliculas_view', ['peliculas' => $peliculas]);
     }
 
     /**
@@ -27,10 +28,10 @@ class PeticionesController extends Controller{
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(){
-        return view('emails.formularioMail_view');
+    public function create()
+    {
+        return view('peliculas.nuevaPelicula_view');
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -38,11 +39,11 @@ class PeticionesController extends Controller{
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
-        $peticion = new Peticiones($request->all());
-        $peticion->save();
-        Mail::to($peticion->email)->send(new NotifyMail($peticion));
-        return redirect()->action([PeticionesController::class, 'index']);
+    public function store(Request $request)
+    {
+        $pelicula = new Peliculas($request->all());
+        $pelicula->save();
+        return redirect()->action([PeliculaController::class, 'index']);
     }
 
     /**
@@ -51,9 +52,10 @@ class PeticionesController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($titulo)
     {
-        //
+        $pelicula = $this->peliculas->obtenerPeliculaPorTitulo($titulo);
+        return view('peliculas.pelicula_view', ['pelicula' => $pelicula]);
     }
 
     /**
@@ -74,9 +76,12 @@ class PeticionesController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $titulo)
     {
-        //
+        $pelicula = Libro::find($titulo);
+        $pelicula->fill($request->all());
+        $pelicula->save();
+        return redirect()->action([PeliculaController::class, 'index']);
     }
 
     /**

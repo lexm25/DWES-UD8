@@ -5,6 +5,7 @@ use App\Http\Controllers\LibroController;
 use App\Http\Controllers\EditorialController;
 use App\Http\Controllers\PeticionesController;
 //use App\Http\Controllers\PrestamoController; 
+use App\Http\Controllers\PeliculaController;
 use App\Http\Controllers\PDFController;
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +59,11 @@ Route::get('/libros/crearPDF', [PDFController::class, 'guardarTodosPDF']);
 Route::get('/libro/crearPDF/{isbn}', [PDFController::class, 'guardarUnoPDF']);
 
 require __DIR__.'/auth.php';
+//PELÍCULAS
+Route::get('/peliculas', [PeliculaController::class, 'index']);
+
+Route::get('/peliculas/crearPelicula', [PeliculaController::class, 'create'])->middleware('auth');
+
+Route::post('/peliculas/crearPelicula',  [PeliculaController::class, 'store'])->middleware('auth');
+
+Route::get('/pelicula/{titulo}', [PeliculaController::class, 'show']);
